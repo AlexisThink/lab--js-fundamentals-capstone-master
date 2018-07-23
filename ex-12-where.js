@@ -13,6 +13,11 @@ function where(array, parametro){
     for(var i = 0; i < array.length; i++){
         current = array[i];
 
+        if(current === Object.keys(parametro)){
+            if (current === Object.values(parametro)){
+                finalList.push(current);
+            }
+        }
     }
     return finalList;
 }
