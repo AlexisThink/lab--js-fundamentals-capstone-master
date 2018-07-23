@@ -8,18 +8,24 @@
   *
  **/
 function where(array, parametro){
-    var finalList=[];
-
-    for(var i = 0; i < array.length; i++){
-        current = array[i];
-
-        if(current === Object.keys(parametro)){
-            if (current === Object.values(parametro)){
-                finalList.push(current);
+    var list = [];
+    
+    for (var i = 0; i < array.length; i++){
+        var current = array[i];
+        var found = true;
+        // console.log(current);
+        for (var key in parametro){
+            console.log(current[key]);
+            if(current[key] !== parametro[key]){
+                found = false;
             }
+
         }
-    }
-    return finalList;
+        if (found === true){
+            list.push(current);
+        }
+    }    
+    return list;
 }
 
 
